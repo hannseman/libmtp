@@ -136,10 +136,10 @@ static propertymap_t *g_propertymap = NULL;
  */
 static int register_filetype(char const * const description, LIBMTP_filetype_t const id,
 			     uint16_t const ptp_id);
-static void init_filemap();
+static void init_filemap(void);
 static int register_property(char const * const description, LIBMTP_property_t const id,
 			     uint16_t const ptp_id);
-static void init_propertymap();
+static void init_propertymap(void);
 static void add_error_to_errorstack(LIBMTP_mtpdevice_t *device,
 				    LIBMTP_error_number_t errornumber,
 				    char const * const error_text);
@@ -287,7 +287,7 @@ static int has_flac_extension(char *name) {
  * Create a new file mapping entry
  * @return a newly allocated filemapping entry.
  */
-static filemap_t *new_filemap_entry()
+static filemap_t *new_filemap_entry(void)
 {
   filemap_t *filemap;
 
@@ -361,7 +361,7 @@ static int register_filetype(char const * const description, LIBMTP_filetype_t c
   return 0;
 }
 
-static void init_filemap()
+static void init_filemap(void)
 {
   register_filetype("Folder", LIBMTP_FILETYPE_FOLDER, PTP_OFC_Association);
   register_filetype("MediaCard", LIBMTP_FILETYPE_MEDIACARD, PTP_OFC_MTP_MediaCard);
@@ -458,7 +458,7 @@ static LIBMTP_filetype_t map_ptp_type_to_libmtp_type(uint16_t intype)
  * Create a new property mapping entry
  * @return a newly allocated propertymapping entry.
  */
-static propertymap_t *new_propertymap_entry()
+static propertymap_t *new_propertymap_entry(void)
 {
   propertymap_t *propertymap;
 
@@ -532,7 +532,7 @@ static int register_property(char const * const description, LIBMTP_property_t c
   return 0;
 }
 
-static void init_propertymap()
+static void init_propertymap(void)
 {
   register_property("Storage ID", LIBMTP_PROPERTY_StorageID, PTP_OPC_StorageID);
   register_property("Object Format", LIBMTP_PROPERTY_ObjectFormat, PTP_OPC_ObjectFormat);

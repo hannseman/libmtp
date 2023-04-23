@@ -94,7 +94,7 @@ static const int mtp_device_table_size =
   sizeof(mtp_device_table) / sizeof(LIBMTP_device_entry_t);
 
 // Local functions
-static LIBMTP_error_number_t init_usb();
+static LIBMTP_error_number_t init_usb(void);
 static void close_usb(PTP_USB* ptp_usb);
 static int find_interface_and_endpoints(libusb_device *dev,
 					uint8_t *conf,
@@ -144,7 +144,7 @@ int LIBMTP_Get_Supported_Devices_List(LIBMTP_device_entry_t ** const devices,
 }
 
 
-static LIBMTP_error_number_t init_usb()
+static LIBMTP_error_number_t init_usb(void)
 {
   static int libusb1_initialized = 0;
 
