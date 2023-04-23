@@ -588,7 +588,7 @@ static LIBMTP_error_number_t get_mtp_usb_device_list(mtpdevice_list_t ** mtp_dev
  * number has an MTP type device descriptor.
  *
  * @param busno the bus number of the device to check
- * @param deviceno the device number of the device to check
+ * @param devno the device number of the device to check
  * @return 1 if the device is MTP else 0
  */
 int LIBMTP_Check_Specific_Device(int busno, int devno)
